@@ -7,13 +7,31 @@
             "id": "a297c8a6-8493-4552-b245-670604903be5",
             "actions": [
                 {
-                    "name": "Movimiento",
+                    "name": "Mover",
                     "type": "Value",
                     "id": "6a1555f9-26ee-408e-b88c-bfbfd784b57a",
                     "expectedControlType": "Vector2",
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": true
+                },
+                {
+                    "name": "Girar",
+                    "type": "Value",
+                    "id": "0af93dac-746e-444f-b054-84068e59abc3",
+                    "expectedControlType": "Axis",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": true
+                },
+                {
+                    "name": "Disparar",
+                    "type": "Button",
+                    "id": "65fa98f7-0f05-4374-bb76-51e6ef42cd4f",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
                 }
             ],
             "bindings": [
@@ -24,7 +42,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "Movimiento",
+                    "action": "Mover",
                     "isComposite": true,
                     "isPartOfComposite": false
                 },
@@ -35,7 +53,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "Movimiento",
+                    "action": "Mover",
                     "isComposite": false,
                     "isPartOfComposite": true
                 },
@@ -46,7 +64,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "Movimiento",
+                    "action": "Mover",
                     "isComposite": false,
                     "isPartOfComposite": true
                 },
@@ -57,7 +75,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "Movimiento",
+                    "action": "Mover",
                     "isComposite": false,
                     "isPartOfComposite": true
                 },
@@ -68,62 +86,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "Movimiento",
-                    "isComposite": false,
-                    "isPartOfComposite": true
-                },
-                {
-                    "name": "FlechasTeclado",
-                    "id": "ff158d60-d2d3-4e7e-b11d-534e26e1975b",
-                    "path": "2DVector",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "Movimiento",
-                    "isComposite": true,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "up",
-                    "id": "a7f84edf-fa66-4609-8c03-4567f32d3a41",
-                    "path": "<Keyboard>/upArrow",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "Movimiento",
-                    "isComposite": false,
-                    "isPartOfComposite": true
-                },
-                {
-                    "name": "down",
-                    "id": "e771a0d9-28ff-4366-a9e4-8cc54830b552",
-                    "path": "<Keyboard>/downArrow",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "Movimiento",
-                    "isComposite": false,
-                    "isPartOfComposite": true
-                },
-                {
-                    "name": "left",
-                    "id": "3e3bf0a5-6215-494d-a69d-05f3d5e127a4",
-                    "path": "<Keyboard>/leftArrow",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "Movimiento",
-                    "isComposite": false,
-                    "isPartOfComposite": true
-                },
-                {
-                    "name": "right",
-                    "id": "c8d7e822-4ff7-4ebf-828f-b888c5baf4db",
-                    "path": "<Keyboard>/rightArrow",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "Movimiento",
+                    "action": "Mover",
                     "isComposite": false,
                     "isPartOfComposite": true
                 },
@@ -134,7 +97,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "Movimiento",
+                    "action": "Mover",
                     "isComposite": true,
                     "isPartOfComposite": false
                 },
@@ -145,7 +108,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "Movimiento",
+                    "action": "Mover",
                     "isComposite": false,
                     "isPartOfComposite": true
                 },
@@ -156,7 +119,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "Movimiento",
+                    "action": "Mover",
                     "isComposite": false,
                     "isPartOfComposite": true
                 },
@@ -167,7 +130,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "Movimiento",
+                    "action": "Mover",
                     "isComposite": false,
                     "isPartOfComposite": true
                 },
@@ -178,9 +141,75 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "Movimiento",
+                    "action": "Mover",
                     "isComposite": false,
                     "isPartOfComposite": true
+                },
+                {
+                    "name": "",
+                    "id": "bdf46644-5be6-449c-bab0-feb9e9fe39eb",
+                    "path": "<Keyboard>/leftShift",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Disparar",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "b18efee9-4ea1-4aa7-b1a1-b8d5a0bb6b3c",
+                    "path": "<Gamepad>/rightTrigger",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Disparar",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "FlechasDireccionales",
+                    "id": "253332dd-b653-4ccd-a385-9150897dc98e",
+                    "path": "1DAxis",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Girar",
+                    "isComposite": true,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "negative",
+                    "id": "6ab85428-edf3-40c8-9842-a91b4ecc427b",
+                    "path": "<Keyboard>/leftArrow",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Girar",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "positive",
+                    "id": "bd6bc951-838c-4762-b30d-6e762c71fd15",
+                    "path": "<Keyboard>/rightArrow",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Girar",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "",
+                    "id": "bc1a216b-1f97-493b-80ab-6af8874ed2d8",
+                    "path": "<Gamepad>/rightStick",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Girar",
+                    "isComposite": false,
+                    "isPartOfComposite": false
                 }
             ]
         }
