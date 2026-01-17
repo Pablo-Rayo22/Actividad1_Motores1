@@ -13,29 +13,31 @@ public class TriggerInterruptor : MonoBehaviour
     [SerializeField] LayerMask layerMask;
     [SerializeField] Canvas detectarCanvas;
     [SerializeField] InputActionReference disparar;
-    //[SerializeField] GameObject[] arrayPuertas = new GameObject[numPuertas];
+    [SerializeField] TriggerPuerta puerta;
 
     //Variables privadas
     private bool disparo = false;
     //private bool puertaAbierta = false;
     //private static int numPuertas = 4;
-    // Update is called once per frame
 
-    void Update()
+    // El método update se llama cada frame (cada pintada de pantalla)
+
+    private void Update()
     {
         detectarCanvas.gameObject.SetActive(false);
-        if (Physics.Raycast(transform.position, transform.forward, out RaycastHit choque, distanciaMaxima, layerMask))
+        if (Physics.Raycast(transform.position, transform.forward, out RaycastHit hit, distanciaMaxima, layerMask))
         {
-            if (choque.collider)
+            if (hit.collider)
             {
                 //Debug.Log("Hay un interruptor cerca");
                 detectarCanvas.gameObject.SetActive (true);
+                DispararRayo();
             }
-            DispararRayo();
-        }
-        
-    }
+            puerta.AbrirPuertas();
 
+        }
+
+    }
 
     private void OnEnable()
     {
@@ -61,12 +63,11 @@ public class TriggerInterruptor : MonoBehaviour
         Debug.Log(context.control.device.name);
     }
 
-   private void DispararRayo()
+    private void DispararRayo()
     {
         if (disparo)
         {
             Debug.Log("Interruptor accionado");
         }
     }
-    
 }

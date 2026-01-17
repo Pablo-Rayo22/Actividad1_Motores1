@@ -29,3 +29,4 @@ public class TrampasLaberinto : MonoBehaviour
         Debug.Log("Has muerto");
     }
 }
+

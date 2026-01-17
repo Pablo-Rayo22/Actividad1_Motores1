@@ -4,8 +4,8 @@
 TagManager:
   serializedVersion: 3
   tags:
+  - TriggerPuerta
   - Trampas
-  - Puerta1
   layers:
   - Default
   - TransparentFX
