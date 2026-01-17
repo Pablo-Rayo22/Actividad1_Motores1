@@ -13,13 +13,12 @@ public class TriggerInterruptor : MonoBehaviour
     [SerializeField] LayerMask layerMask;
     [SerializeField] Canvas detectarCanvas;
     [SerializeField] InputActionReference disparar;
-    [SerializeField] GameObject[] arrayPuertas = new GameObject[numPuertas];
+    //[SerializeField] GameObject[] arrayPuertas = new GameObject[numPuertas];
 
     //Variables privadas
     private bool disparo = false;
     //private bool puertaAbierta = false;
-    private static int numPuertas = 3; // hnblkefdjvbñlkjhfsks
-    
+    //private static int numPuertas = 4;
     // Update is called once per frame
 
     void Update()
@@ -70,11 +69,4 @@ public class TriggerInterruptor : MonoBehaviour
         }
     }
     
-    private void AbrirPuerta()
-    {
-        for (int i = 0; i < arrayPuertas.Length; i++)
-        {
-            
-        }
-    }
 }
