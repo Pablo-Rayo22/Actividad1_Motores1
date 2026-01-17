@@ -8,8 +8,8 @@ public class TrampasLaberinto : MonoBehaviour
 
 
     // Variables privadas
-    private bool activarTrampa = false;
-    private bool trampaActivada = false;
+    //private bool activarTrampa = false;
+    //private bool trampaActivada = false;
 
    
     // Métodos
@@ -18,14 +18,14 @@ public class TrampasLaberinto : MonoBehaviour
     {
         if (other.tag == "Trampas")
         {
-            activarTrampa = true;
+            //activarTrampa = true;
             Debug.Log("Trampa activada");
         }
     }
 
     private void OnCollisionEnter(Collision collision)
     {
-        trampaActivada = true;
+        //trampaActivada = true;
         Debug.Log("Has muerto");
     }
 }
