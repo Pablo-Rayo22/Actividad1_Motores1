@@ -18,7 +18,7 @@ public class TriggerInterruptor : MonoBehaviour
     //Variables privadas
     private bool disparo = false;
     //private bool puertaAbierta = false;
-    private static int numPuertas = 3;
+    private static int numPuertas = 3; // hnblkefdjvbñlkjhfsks
     
     // Update is called once per frame
 
