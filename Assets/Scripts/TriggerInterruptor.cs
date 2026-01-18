@@ -11,32 +11,33 @@ public class TriggerInterruptor : MonoBehaviour
     [Header("Variables serializadas")]
     [SerializeField] int distanciaMaxima = 5;
     [SerializeField] LayerMask layerMask;
-    [SerializeField] Canvas detectarCanvas;
+    [SerializeField] Canvas detectarCanvasDisparo;
     [SerializeField] InputActionReference disparar;
     [SerializeField] TriggerPuerta puerta;
 
     //Variables privadas
     private bool disparo = false;
     //private bool puertaAbierta = false;
-    //private static int numPuertas = 4;
+
+    enum listaInterruptores
+    {
+        interruptor1,
+        interruptor2, 
+        interruptor3
+    }
 
     // El método update se llama cada frame (cada pintada de pantalla)
-
     private void Update()
     {
-        detectarCanvas.gameObject.SetActive(false);
+        detectarCanvasDisparo.gameObject.SetActive(false);
         if (Physics.Raycast(transform.position, transform.forward, out RaycastHit hit, distanciaMaxima, layerMask))
         {
             if (hit.collider)
             {
-                //Debug.Log("Hay un interruptor cerca");
-                detectarCanvas.gameObject.SetActive (true);
-                DispararRayo();
+                detectarCanvasDisparo.gameObject.SetActive (true);
+                DispararRayo(hit.collider.name);
             }
-            puerta.AbrirPuertas();
-
         }
-
     }
 
     private void OnEnable()
@@ -63,11 +64,31 @@ public class TriggerInterruptor : MonoBehaviour
         Debug.Log(context.control.device.name);
     }
 
-    private void DispararRayo()
+    private void DispararRayo(string nombreInterruptor)
     {
+        int numPuerta = default;
         if (disparo)
         {
-            Debug.Log("Interruptor accionado");
+               switch (nombreInterruptor)
+            {
+               case "Interruptor1":
+               {
+                    numPuerta = 0;
+                    break;
+               }
+               case "Interruptor2":
+               {
+                   numPuerta = 1;
+                   break;
+               }
+               case "Interruptor3":
+               {
+                   numPuerta = 2;
+                   break;
+               }
+            }
+            Debug.Log($"{nombreInterruptor} accionado. Puerta{numPuerta + 1} abierta");
+            puerta.AbrirPuertas(numPuerta);
         }
     }
 }
