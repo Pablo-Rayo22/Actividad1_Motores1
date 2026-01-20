@@ -4,39 +4,36 @@ using UnityEditor.Experimental.GraphView;
 using UnityEditorInternal;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.Rendering;
 
+
+[RequireComponent(typeof(TriggerPuerta))] // Si este game object no tiene asignado un componente triggerPuerta, lo crea
 public class TriggerInterruptor : MonoBehaviour
 {
     // Variables
     [Header("Variables serializadas")]
-    [SerializeField] int distanciaMaxima = 5;
     [SerializeField] LayerMask layerMask;
-    [SerializeField] Canvas detectarCanvasDisparo;
+    [SerializeField] Canvas detectorCanvasDisparo;
     [SerializeField] InputActionReference disparar;
     [SerializeField] TriggerPuerta puerta;
 
     //Variables privadas
     private bool disparo = false;
-    //private bool puertaAbierta = false;
-
-    enum listaInterruptores
-    {
-        interruptor1,
-        interruptor2, 
-        interruptor3
-    }
-
+    private const float distanciaMaxima = 3;
+    // Métodos
     // El método update se llama cada frame (cada pintada de pantalla)
     private void Update()
     {
-        detectarCanvasDisparo.gameObject.SetActive(false);
+        detectorCanvasDisparo.gameObject.SetActive(false);
+
         if (Physics.Raycast(transform.position, transform.forward, out RaycastHit hit, distanciaMaxima, layerMask))
         {
             if (hit.collider)
             {
-                detectarCanvasDisparo.gameObject.SetActive (true);
+                detectorCanvasDisparo.gameObject.SetActive(true);
                 DispararRayo(hit.collider.name);
             }
+            
         }
     }
 
@@ -54,7 +51,7 @@ public class TriggerInterruptor : MonoBehaviour
         disparar.action.Disable();
 
         disparar.action.started -= OnDisparar;
-        disparar.action.performed -= OnDisparar;
+        //disparar.action.performed -= OnDisparar;
         disparar.action.canceled -= OnDisparar;
     }
 

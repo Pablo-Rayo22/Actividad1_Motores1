@@ -4,29 +4,40 @@ public class TrampasLaberinto : MonoBehaviour
 {
     // Variables
     [Header("Variables serializadas")]
-    [SerializeField] LayerMask layerMask;
-
+    [SerializeField] GameObject personaje;
 
     // Variables privadas
-    //private bool activarTrampa = false;
-    //private bool trampaActivada = false;
+    private Vector3 posicionInicial;
+    private Quaternion rotacionInicial;
 
-   
     // Métodos
 
-    private void OnTriggerEnter(Collider other)
+    private void Start()
     {
-        if (other.tag == "Trampas")
+        posicionInicial = personaje.transform.position;
+        rotacionInicial = personaje.transform.rotation;
+    }
+
+    private void OnControllerColliderHit(ControllerColliderHit hit)
+    {
+
+        ActivarTrampa(hit.gameObject);
+    }
+
+    void ActivarTrampa(GameObject collider)
+    {
+        
+        if (collider.CompareTag("Trampas"))
         {
-            //activarTrampa = true;
-            Debug.Log("Trampa activada");
+            Debug.Log("Has muerto");
+            Reaparecer();
         }
     }
 
-    private void OnCollisionEnter(Collision collision)
+    private void Reaparecer ()
     {
-        //trampaActivada = true;
-        Debug.Log("Has muerto");
+        personaje.transform.SetPositionAndRotation(posicionInicial, rotacionInicial);
+
     }
 }
 
