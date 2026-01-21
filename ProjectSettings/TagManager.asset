@@ -5,6 +5,7 @@ TagManager:
   serializedVersion: 3
   tags:
   - Trampas
+  - Meta
   layers:
   - Default
   - TransparentFX

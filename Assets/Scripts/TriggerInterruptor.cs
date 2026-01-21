@@ -1,13 +1,12 @@
-using System.Security.Cryptography.X509Certificates;
-using UnityEditor.Callbacks;
-using UnityEditor.Experimental.GraphView;
-using UnityEditorInternal;
+/*
+Autor: Pablo Jiménez García
+Asignatura: Motores para Videojuegos 1 
+*/
+
+using System;
 using UnityEngine;
 using UnityEngine.InputSystem;
-using UnityEngine.Rendering;
 
-
-[RequireComponent(typeof(TriggerPuerta))] // Si este game object no tiene asignado un componente triggerPuerta, lo crea
 public class TriggerInterruptor : MonoBehaviour
 {
     // Variables
@@ -19,9 +18,9 @@ public class TriggerInterruptor : MonoBehaviour
 
     //Variables privadas
     private bool disparo = false;
-    private const float distanciaMaxima = 3;
+    private const float distanciaMaxima = 4;
+
     // Métodos
-    // El método update se llama cada frame (cada pintada de pantalla)
     private void Update()
     {
         detectorCanvasDisparo.gameObject.SetActive(false);
@@ -51,7 +50,7 @@ public class TriggerInterruptor : MonoBehaviour
         disparar.action.Disable();
 
         disparar.action.started -= OnDisparar;
-        //disparar.action.performed -= OnDisparar;
+        disparar.action.performed -= OnDisparar;
         disparar.action.canceled -= OnDisparar;
     }
 

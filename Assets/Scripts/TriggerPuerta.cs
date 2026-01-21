@@ -1,5 +1,9 @@
+/*
+Autor: Pablo Jiménez García
+Asignatura: Motores para Videojuegos 1 
+*/
+
 using System;
-using UnityEditor.EditorTools;
 using UnityEngine;
 
 public class TriggerPuerta : MonoBehaviour
