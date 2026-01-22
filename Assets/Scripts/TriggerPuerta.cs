@@ -14,7 +14,7 @@ public class TriggerPuerta : MonoBehaviour
     [SerializeField] bool[] arrayPuertasAbiertas = new bool[numPuertas];
 
     // Variables privadas
-    private static int numPuertas = 3;
+    private const int numPuertas = 3;
     private const float desplazamientoPuerta = 5f;
 
     // Métodos

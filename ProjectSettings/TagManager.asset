@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Trampas
   - Meta
+  - Muros
   layers:
   - Default
   - TransparentFX
@@ -13,7 +14,7 @@ TagManager:
   - TriggerInterruptor
   - Water
   - UI
-  - Trampas
+  - 
   - 
   - 
   - 

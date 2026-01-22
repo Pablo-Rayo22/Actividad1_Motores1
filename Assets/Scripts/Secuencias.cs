@@ -59,8 +59,8 @@ public class Secuencias : MonoBehaviour
         secuenciaActiva = false;
         personaje.bloqueado = false;
     }
-        public bool FinCinematica()
-        {
+    public bool FinCinematica()
+    {
         return secuenciaActiva && directorMuerte.state != PlayState.Playing;
-        }
+    }
 }

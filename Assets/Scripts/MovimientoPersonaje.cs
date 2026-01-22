@@ -35,7 +35,7 @@ public class MovimientoPersonaje : MonoBehaviour
 
     private void Update()
     {
-        if (bloqueado)
+        if (bloqueado) //Para bloquear el movimiento del personaje durante las animaciones
         {
             return;
         }

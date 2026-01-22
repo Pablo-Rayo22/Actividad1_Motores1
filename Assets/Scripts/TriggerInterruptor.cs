@@ -21,7 +21,7 @@ public class TriggerInterruptor : MonoBehaviour
     private const float distanciaMaxima = 4;
 
     // Métodos
-    private void Update()
+    private void FixedUpdate()
     {
         detectorCanvasDisparo.gameObject.SetActive(false);
 
@@ -32,7 +32,6 @@ public class TriggerInterruptor : MonoBehaviour
                 detectorCanvasDisparo.gameObject.SetActive(true);
                 DispararRayo(hit.collider.name);
             }
-            
         }
     }
 
