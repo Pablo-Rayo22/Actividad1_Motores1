@@ -50,7 +50,6 @@ public class Secuencias : MonoBehaviour
 
     public void BloquearMovimientoSecuencias()
     {
-        secuenciaActiva = true;
         personaje.bloqueado = true;
     }
 
