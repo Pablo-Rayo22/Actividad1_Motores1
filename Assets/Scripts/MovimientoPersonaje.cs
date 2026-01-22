@@ -16,6 +16,7 @@ public class MovimientoPersonaje : MonoBehaviour
    [Header("Variables publicas")]
     public float velocidad = 5f;
     public float velocidadAngular = 180f;
+    public bool bloqueado = false;
 
     [Header("Variables serializadas")]
     [SerializeField] InputActionReference mover;
@@ -34,6 +35,11 @@ public class MovimientoPersonaje : MonoBehaviour
 
     private void Update()
     {
+        if (bloqueado)
+        {
+            return;
+        }
+
         Vector3 movimiento = new Vector3(vectorMovimiento.y, 0, -vectorMovimiento.x) * velocidad;
         float giroPersonaje = giro * velocidadAngular * Time.deltaTime;
         controller.SimpleMove(movimiento);
@@ -69,14 +75,14 @@ public class MovimientoPersonaje : MonoBehaviour
     void OnMover(InputAction.CallbackContext context)
     {
         vectorMovimiento = context.ReadValue<Vector2>();
-        //Debug.Log(vectorMovimiento);
-        //Debug.Log(context.control.device.name);
+        Debug.Log(vectorMovimiento);
+        Debug.Log(context.control.device.name);
     }
 
     void OnGirar(InputAction.CallbackContext context)
     {
         giro = context.ReadValue<float>();
-        //Debug.Log(giro);
-        //Debug.Log(context.control.device.name);
+        Debug.Log(giro);
+        Debug.Log(context.control.device.name);
     }
 }

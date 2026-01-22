@@ -5,12 +5,13 @@ Asignatura: Motores para Videojuegos 1
 
 using System;
 using UnityEngine;
+using UnityEngine.Playables;
 
 public class TrampasLaberinto : MonoBehaviour
 {
     // Variables
     [Header("Variables serializadas")]
-    [SerializeField] GameObject personaje;
+    [SerializeField] MovimientoPersonaje personaje;
     [SerializeField] Secuencias secuencias;
 
     // Variables privadas
@@ -24,6 +25,16 @@ public class TrampasLaberinto : MonoBehaviour
         rotacionInicial = personaje.transform.rotation;
     }
 
+    private void FixedUpdate()
+    {
+        if (secuencias.FinCinematica())
+        {
+            secuencias.DesbloquearMovimientoSecuencias();
+            Reaparecer();
+        }
+        
+    }
+
     private void OnControllerColliderHit(ControllerColliderHit hit)
     {
         ActivarTrampa(hit.gameObject);
@@ -35,11 +46,10 @@ public class TrampasLaberinto : MonoBehaviour
         {
             Debug.Log("Has muerto");
             secuencias.ActivarSecuenciaMuerte(collider);
-            Reaparecer();
         }
     }
 
-    private void Reaparecer ()
+    public void Reaparecer ()
     {
         personaje.transform.SetPositionAndRotation(posicionInicial, rotacionInicial);
     }
