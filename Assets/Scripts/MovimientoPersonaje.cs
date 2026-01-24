@@ -4,7 +4,6 @@ Asignatura: Motores para Videojuegos 1
 */
 
 using System;
-using UnityEditor.Rendering;
 using UnityEngine;
 using UnityEngine.InputSystem;
 

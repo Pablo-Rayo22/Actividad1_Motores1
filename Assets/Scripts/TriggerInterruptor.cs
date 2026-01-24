@@ -21,7 +21,7 @@ public class TriggerInterruptor : MonoBehaviour
     private const float distanciaMaxima = 4;
 
     // Métodos
-    private void FixedUpdate()
+    private void Update()
     {
         detectorCanvasDisparo.gameObject.SetActive(false);
 

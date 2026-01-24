@@ -10,11 +10,10 @@ public class TriggerPuerta : MonoBehaviour
 {
     // Variables
     [Header("Variables serializadas")]
-    [SerializeField] GameObject[] arrayPuertas = new GameObject[numPuertas];
-    [SerializeField] bool[] arrayPuertasAbiertas = new bool[numPuertas];
+    [SerializeField] GameObject[] arrayPuertas;
+    [SerializeField] bool[] arrayPuertasAbiertas;
 
     // Variables privadas
-    private const int numPuertas = 3;
     private const float desplazamientoPuerta = 5f;
 
     // Métodos
